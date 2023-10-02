@@ -9,7 +9,7 @@ export default function Search() {
 
    function handleSearch(e: FormEvent) {
       e.preventDefault();
-      router.push(`/results/${search}`);
+      if (search) router.push(`/results/${search}`);
    }
 
    return (
