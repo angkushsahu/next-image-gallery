@@ -3,7 +3,7 @@ import type { ImageResults } from "@/models/images";
 import ImageContainer from "./imageContainer";
 
 export interface GalleryProps {
-   term: string | undefined | null;
+   term?: string | undefined | null;
 }
 
 export default async function Gallery({ term }: GalleryProps) {
