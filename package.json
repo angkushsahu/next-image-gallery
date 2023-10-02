@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "next": "latest",
+    "plaiceholder": "^3.0.0",
     "react": "latest",
     "react-dom": "latest",
     "zod": "^3.22.2"
