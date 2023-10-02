@@ -2,8 +2,12 @@ import { addBlurredDataUrls, fetchImages } from "@/lib";
 import type { ImageResults } from "@/models/images";
 import ImageContainer from "./imageContainer";
 
-export default async function Gallery() {
-   const url = "https://api.pexels.com/v1/curated";
+export interface GalleryProps {
+   term: string | undefined | null;
+}
+
+export default async function Gallery({ term }: GalleryProps) {
+   const url = `https://api.pexels.com/v1/${term ? `search?query=${term}` : "curated"}`;
    const images: ImageResults | undefined = await fetchImages(url);
    if (!images) return <h2 className="m-4 text-2xl font-bold">No Images Found!!</h2>;
 
